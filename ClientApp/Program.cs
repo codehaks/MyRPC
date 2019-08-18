@@ -14,12 +14,15 @@ namespace ClientApp
             try
             {
                 TcpClient Tcpclient = new TcpClient();
+
                 Console.WriteLine("Connecting..");
                 Tcpclient.Connect("127.100.100.50", 3000);
                 Console.WriteLine("Connected");
                 Console.WriteLine("Ente the String you want to send ");
+
                 string str = Console.ReadLine();
                 Stream stm = Tcpclient.GetStream();
+
                 ASCIIEncoding ascnd = new ASCIIEncoding();
                 byte[] ba = ascnd.GetBytes(str);
                 Console.WriteLine("Sending..");
